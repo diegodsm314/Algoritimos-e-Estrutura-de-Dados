@@ -10,7 +10,7 @@ public class App {
         int random, aux, aux2;
 
         //Arvore Ordenada
-        for(int i = 1000; i<10000; i+=1000){
+        for(int i = 10000; i<100000; i+=10000){
             Item it = new Item(i);
             arvore.inserir(it);
         }
@@ -21,7 +21,7 @@ public class App {
         //Teste de tempo e iteraçoes de pesquisa
         long tempoInicial;
         long tempoFinal;
-        for (int i = 500; i < 10000; i+=1000) {
+        for (int i = 5000; i < 100000; i+=10000) {
             Item reg = new Item(i);
             aux = reg.getContador();
             tempoInicial = System.nanoTime();
@@ -34,7 +34,7 @@ public class App {
 
         //Arvore Não Ordenada
         for (int i = 0; i < 9; i++) {
-            random = ((1+rand.nextInt(9))*1000);
+            random = ((1+rand.nextInt(9))*10000);
             Item it = new Item(random);
             try {
                 arvore2.inserir(it);
@@ -50,7 +50,7 @@ public class App {
 
         //Teste de tempo e iteraçoes de pesquisa
 
-        for (int i = 500; i < 10000; i+=1000) {
+        for (int i = 5000; i < 100000; i+=10000) {
             Item reg = new Item(i);
             aux = reg.getContador();
             tempoInicial = System.nanoTime();
