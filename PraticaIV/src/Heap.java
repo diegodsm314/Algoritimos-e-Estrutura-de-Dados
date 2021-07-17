@@ -9,7 +9,7 @@ public class Heap {
     }
 
     public void refaz(int esq, int dir) {
-        int i = esq*2; 
+        int i = esq*2;  
         Item item = this.it[esq];
         while(i<=dir){
             if ((i<dir) && (this.it[i].compara(this.it[i+1])<0)) {
