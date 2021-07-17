@@ -18,7 +18,7 @@ public class App {
         System.out.println("Ordenados:");
         //arvore.imprimir();
 
-        //Teste para gerar o grafico
+        //Teste de tempo e iteraçoes de pesquisa
         long tempoInicial;
         long tempoFinal;
         for (int i = 500; i < 10000; i+=1000) {
@@ -47,7 +47,7 @@ public class App {
         System.out.println("Desordenados:");
         //arvore2.imprimir();
 
-        //Teste para gerar o grafico
+        //Teste de tempo e iteraçoes de pesquisa
         for (int i = 500; i < 10000; i+=1000) {
             tempoInicial = System.nanoTime();
             Item reg = new Item(i);

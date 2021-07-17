@@ -7,23 +7,34 @@ public class App {
         ArvoreSBB arvore = new ArvoreSBB();
         ArvoreSBB arvore2 = new ArvoreSBB();
         Random rand = new Random();
-        int random;
+        int random, aux, aux2;
 
         //Arvore Ordenada
-        System.out.println("Arvore Ordenada:");
-        for(int i = 1000; i<10000; i+=1000){
+        for(int i = 10000; i<100000; i+=10000){
             Item it = new Item(i);
             arvore.inserir(it);
         }
 
-        System.out.println("Ordenados:");
-        arvore.imprimir();
+        System.out.println("Arvore Ordenada:");
+        //arvore.imprimir();
 
         //Teste de tempo e iteraçoes de pesquisa
+        long tempoInicial;
+        long tempoFinal;
+        for (int i = 5000; i < 100000; i+=10000) {
+            Item reg = new Item(i);
+            aux = reg.getContador();
+            tempoInicial = System.nanoTime();
+            arvore.pesquisar(reg);
+            tempoFinal= System.nanoTime();
+            aux2 = reg.getContador();
+            System.out.println("n: "+ i+" Iterações: " + (aux2-aux));
+            System.out.println("O metodo executou em " + (tempoFinal - tempoInicial)+"ns");
+        }
 
         //Arvore Não Ordenada
         for (int i = 0; i < 9; i++) {
-            random = ((1+rand.nextInt(9))*1000);
+            random = ((1+rand.nextInt(9))*10000);
             Item it = new Item(random);
             try {
                 arvore2.inserir(it);
@@ -32,10 +43,23 @@ public class App {
             }
         }
 
+        
+
+        System.out.println("Arvore Não Ordenada:");
+        //arvore2.imprimir();
+
         //Teste de tempo e iteraçoes de pesquisa
 
-        System.out.println("Desordenados:");
-        arvore2.imprimir();
+        for (int i = 5000; i < 100000; i+=10000) {
+            Item reg = new Item(i);
+            aux = reg.getContador();
+            tempoInicial = System.nanoTime();
+            arvore2.pesquisar(reg);
+            tempoFinal= System.nanoTime();
+            aux2 = reg.getContador();
+            System.out.println("n: "+ i+" Iterações: " + (aux2-aux));
+            System.out.println("O metodo executou em " + (tempoFinal - tempoInicial)+"ns");
+        }
 
 
     }

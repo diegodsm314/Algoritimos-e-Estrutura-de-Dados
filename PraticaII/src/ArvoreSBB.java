@@ -138,7 +138,7 @@ public class ArvoreSBB {
         }
     }
 
-    public Item pesquisa (Item reg) {
+    public Item pesquisar(Item reg) {
         return this.pesquisar(reg, this.n);
     }
 
