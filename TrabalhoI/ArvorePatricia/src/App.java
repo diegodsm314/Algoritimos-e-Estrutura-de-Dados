@@ -23,8 +23,6 @@ public class App {
               && !retornoPalavra.equals("pararcodigo")) {
             //atualiza a posição a cada iteração
             posicao++;
-            // System.out.println(retornoPalavra);
-
             //VERIFICAÇÃO DA PALAVRA NO HASHMAP:
             if (Objects.isNull(hash.get(retornoPalavra))) {                   
               index.add(posicao);

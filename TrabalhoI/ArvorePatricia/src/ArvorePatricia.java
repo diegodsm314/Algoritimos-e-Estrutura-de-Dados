@@ -76,7 +76,7 @@ public class ArvorePatricia {
           if (this.bit (aux.index, k) == 1) p = aux.dir; else p = aux.esq;
         }
         PatNoExt aux = (PatNoExt)p;
-        int i = 1; // @{\it acha o primeiro bit diferente}@
+        int i = 1; // @{acha o primeiro bit diferente}@
         while ((i <= this.nbitsChave)&&
                (this.bit (i, k) == this.bit (i, aux.chave))) i++;
         if (i > this.nbitsChave) {
