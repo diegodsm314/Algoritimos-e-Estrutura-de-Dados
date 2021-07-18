@@ -8,17 +8,17 @@ public class ExtraiPalavra {
   public ExtraiPalavra (String nomeArqTxt) 
   throws Exception {
     this.arqTxt = new BufferedReader (new FileReader (nomeArqTxt));
-    // @{\it Os delimitadores devem estar juntos em uma \'unica linha do arquivo}@ 
-    this.delimitadores = "\r\n\t "; 
+    // Os delimitadores encontrados são pontuações, espaço, \n, \t e \r
+    this.delimitadores = "\r\n\t ,.():?/"; 
     this.palavras = null;
   }  
   
   public String proximaPalavra () throws Exception{
     if (palavras == null || !palavras.hasMoreTokens()) {
       String linha = arqTxt.readLine();
-      if (linha == null) return null; 
+      if (linha == null) return "pararcodigo";  //Um "String retorno" para parar o codigo
       this.palavras = new StringTokenizer (linha, this.delimitadores);
-      if (!palavras.hasMoreTokens()) return ""; // @{\it ignora delimitadores}@
+      if (!palavras.hasMoreTokens()) return ""; // @{ignora delimitadores}@
     }
     return this.palavras.nextToken ();
   }  
