@@ -71,7 +71,7 @@ public class ArvorePatricia {
       if (t == null) return this.criaNoExt (k);
       else {
         PatNo p = t;
-        while (!this.eExterno (p)) {
+        while (!this.eExterno(p)) {
           PatNoInt aux = (PatNoInt)p;
           if (this.bit (aux.index, k) == 1) p = aux.dir; else p = aux.esq;
         }
